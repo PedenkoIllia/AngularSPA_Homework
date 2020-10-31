@@ -1,0 +1,31 @@
+<p *ngIf='!messages'><em>Loading...</em></p>
+
+<table class="table" *ngIf='messages'>
+  <tbody>
+    <tr class="border_bottom" *ngFor='let message of messages'>
+      <td class="msg">
+        <p *ngIf='!message.isEditing'>
+          {{ message.msg }}
+        </p>
+        <textarea rows="6" cols="60" 
+         *ngIf='message.isEditing' [(ngModel)]='changedText'></textarea>
+      </td>
+      <td class="btn">
+        <button class="edit" *ngIf='!message.isEditing' (click)='changeMessage(message.id)'>Change</button>
+        <button class="confirm" *ngIf='message.isEditing' (click)='changeConfirm(message.id)'>Confirm</button>
+        <button class="cancel" *ngIf='message.isEditing' (click)='changeCancel(message.id)'>Cancel</button>
+      </td>
+      <td class="btn">
+        <button class="cancel" (click)="deleteMessage(message.id)">Delete</button>
+      </td>
+   </tr>
+   <tr>
+      <td>
+        <textarea rows="6" cols="60" [(ngModel)]='newMessageText'></textarea>
+      </td>
+      <td class="btn">
+        <button class="edit" (click)='createNewMessage()'>Create message</button>
+      </td>
+   </tr>
+  </tbody>
+</table>

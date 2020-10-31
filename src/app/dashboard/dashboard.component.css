@@ -1,0 +1,47 @@
+.table {
+    width: 60%;
+    height: auto;
+    align-items: center;
+    font-size: 16pt;
+}
+
+tr.border_bottom td {
+    border-bottom: 1px solid black;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px 5px;
+    border-radius: 5px;
+    font-size: 14pt;
+}
+
+button.edit {
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    color: white;
+}
+
+button.confirm {
+    background-color: chartreuse;
+    border: 1px solid #222;
+    color: black;
+}
+
+button.cancel {
+    background-color: crimson;
+    border: 1px solid #888;
+    color: white;
+}
+
+td.msg{
+    min-width: 60%;
+}
+td.btn{
+    width: 110px;
+}
+
+textarea {
+    font-size: 14pt;
+    font-family: 'Times New Roman', Times, serif;
+}
